@@ -6,6 +6,9 @@ module.exports = {
         filename: "bundle.js",
         path: path.resolve(__dirname, './dist')
     },
+    resolve: {
+        extensions: [".js","jsx",".ts",".json"]
+    },
     module: {
         rules: [
             /*{
@@ -13,15 +16,25 @@ module.exports = {
             use: ['style-loader','css-loader?minimize'],
         }*/
             {
-                test: /\.css/, loader: ExtractTextPlugin.extract({
+                test: /\.css$/, loader: ExtractTextPlugin.extract({
                     use: ['css-loader']
                 })
-            }
+            } 
+
+
         ]
-    }  ,
+    },
     plugins: [
-       new ExtractTextPlugin({
-           filename:'[name]_[contenthash:8].css' ,
-       })
-    ]
+        new ExtractTextPlugin({
+            filename: '[name]_[hash:8].css',
+        })      
+    ]   ,
+    devServer: {
+        headers:{
+            'auto':44 ,
+
+        }    ,
+        https:true 
+
+    }
 };
