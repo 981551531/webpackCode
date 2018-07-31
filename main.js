@@ -1,5 +1,10 @@
 import {show} from './show'
-require('./main.css')
+
+
 window.onload=function () {
-     show("   ， webpack")
+    let a=7;
+    let b=9;
+    let c=a+b;
+
+    show(`   ， webpack${c}`)
 }

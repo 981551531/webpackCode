@@ -7,7 +7,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist')
     },
     resolve: {
-        extensions: [".js","jsx",".ts",".json"]
+        extensions: [".js", "jsx", ".ts", ".json"]
     },
     module: {
         rules: [
@@ -19,22 +19,25 @@ module.exports = {
                 test: /\.css$/, loader: ExtractTextPlugin.extract({
                     use: ['css-loader']
                 })
-            } 
+            },
+            {
+                test: /\.js/, use: ["babel-loader"]
+            }
 
 
         ]
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: '[name]_[hash:8].css',
-        })      
-    ]   ,
+            filename: '[name].css',
+        })
+    ],
     devServer: {
-        headers:{
-            'auto':44 ,
+        headers: {
+            'auto': 44,
 
-        }    ,
-        https:true 
+        },
+        https: true
 
     }
 };
