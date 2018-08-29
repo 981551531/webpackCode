@@ -9,6 +9,7 @@ module.exports = {
     resolve: {
         extensions: [".js", "jsx", ".ts", ".json"]
     },
+    devtool: "source-map",
     module: {
         rules: [
             /*{
@@ -37,7 +38,7 @@ module.exports = {
             'auto': 44,
 
         },
-        https: true
+        https: false
 
     }
 };

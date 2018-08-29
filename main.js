@@ -1,10 +1,8 @@
-import {show} from './show'
+import a from "./promisetest.js";
 
-
-window.onload=function () {
-    let a=7;
-    let b=9;
-    let c=a+b;
-
-    show(`   ， webpack${c}`)
-}
+ 
+let s=new  a();
+s.init().then(re=>{
+    console.log("promise返回结果",re)   ;
+    document.getElementById("root").innerHTML=`promise返回结果,${re}`
+});

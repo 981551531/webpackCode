@@ -1,9 +1,12 @@
 import QRCode from 'qrcode'
 
-function show(str) {
-    generateQRCode("dsfsdf")
-    // document.getElementById("root").innerHTML = `<img src=${generateQRCode("https://www.cmaotai.com//index.html?faceverify=qrscan&t=284814") } />`;
+class show{
+    init(str) {
+        // generateQRCode("dsfsdf")
+        document.getElementById("root").innerHTML = `Hello ${str}`;
+    }
 }
+
 
 function generateQRCode(str) {
     let result = ''
