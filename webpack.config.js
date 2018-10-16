@@ -1,9 +1,10 @@
 const path = require('path');
+var webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: './main.js',
     output: {
-        filename: "bundle.js",
+        filename: '[name].js',
         path: path.resolve(__dirname, './dist')
     },
     resolve: {
@@ -31,7 +32,8 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin({
             filename: '[name].css',
-        })
+        })      ,
+        new webpack.optimize.OccurrenceOrderPlugin(),
     ],
     devServer: {
         headers: {
